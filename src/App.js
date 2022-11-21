@@ -1,23 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Card from "./components/Cards.js";
+import RenderCards from "./components/RenderCards";
+import { useState, useEffect } from "react";
+import uniqid from "uniqid";
+import ScoreBoard from "./components/ScoreBoard";
+import HighestScore from "./components/HighestScore";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+const _ = require("lodash");
 
 function App() {
+  const [cardsArray, setCardsArray] = useState([
+    { component: Card, clicked: false, id: uniqid(), num: 1 },
+    { component: Card, clicked: false, id: uniqid(), num: 2 },
+    { component: Card, clicked: false, id: uniqid(), num: 3 },
+    { component: Card, clicked: false, id: uniqid(), num: 4 },
+    { component: Card, clicked: false, id: uniqid(), num: 5 },
+    { component: Card, clicked: false, id: uniqid(), num: 6 },
+    { component: Card, clicked: false, id: uniqid(), num: 7 },
+    { component: Card, clicked: false, id: uniqid(), num: 8 },
+  ]);
+
+  const [scoreBoard, setScoreBoard] = useState(0);
+  const [highestScore, setHighestScore] = useState(0);
+
+  useEffect(() => {
+    scoreBoard >= highestScore && setHighestScore(scoreBoard);
+    let deepCopy = _.cloneDeep(cardsArray);
+    shuffleArray(deepCopy);
+    setCardsArray(deepCopy);
+  }, [scoreBoard]);
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  };
+
+  const cardClicked = (id) => {
+    const deepCopy = _.cloneDeep(cardsArray);
+    let findCard = deepCopy.find((card) => card.id === id);
+
+    if (findCard.clicked === false) {
+      findCard.clicked = !findCard.clicked;
+      setScoreBoard((curr) => curr + 1);
+
+      setCardsArray(
+        cardsArray.map((comp) => (comp.id === id ? findCard : comp))
+      );
+    } else {
+      setScoreBoard(0);
+      deepCopy.map((comp) => (comp.clicked = false));
+      setCardsArray(deepCopy);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <div className="score">
+          <ScoreBoard scoreBoard={scoreBoard} />
+          <HighestScore highestScore={highestScore} />
+        </div>
+        <div className="cards">
+          <RenderCards cards={cardsArray} cardClicked={cardClicked} />
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }
