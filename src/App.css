@@ -8,18 +8,36 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-width: 920px;
+}
+
+header {
+  background-color: #16a34a;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-family: "Dancing Script", cursive;
+  font-family: "Lobster", cursive;
+  font-size: 4em;
 }
 
 main {
   display: flex;
   gap: 40px;
   flex: 1;
+  background-color: #16a34a;
 }
 
 .card {
-  width: 300px;
-  height: 300px;
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background-color: #064e3b;
   box-shadow: 0px 0px 10px 5px black;
   overflow-wrap: break-word;
   border-radius: 20px;
@@ -32,8 +50,26 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  padding: 50px 0px;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .score {
   position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+img {
+  width: 200px;
+}
+
+footer {
+  background-color: #16a34a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding: 10px;
 }

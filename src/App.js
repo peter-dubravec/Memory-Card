@@ -7,18 +7,29 @@ import ScoreBoard from "./components/ScoreBoard";
 import HighestScore from "./components/HighestScore";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import {
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+} from "./images/index";
+
 const _ = require("lodash");
 
 function App() {
   const [cardsArray, setCardsArray] = useState([
-    { component: Card, clicked: false, id: uniqid(), num: 1 },
-    { component: Card, clicked: false, id: uniqid(), num: 2 },
-    { component: Card, clicked: false, id: uniqid(), num: 3 },
-    { component: Card, clicked: false, id: uniqid(), num: 4 },
-    { component: Card, clicked: false, id: uniqid(), num: 5 },
-    { component: Card, clicked: false, id: uniqid(), num: 6 },
-    { component: Card, clicked: false, id: uniqid(), num: 7 },
-    { component: Card, clicked: false, id: uniqid(), num: 8 },
+    { component: Card, clicked: false, id: uniqid(), num: 1, img: image1 },
+    { component: Card, clicked: false, id: uniqid(), num: 2, img: image2 },
+    { component: Card, clicked: false, id: uniqid(), num: 3, img: image3 },
+    { component: Card, clicked: false, id: uniqid(), num: 4, img: image4 },
+    { component: Card, clicked: false, id: uniqid(), num: 5, img: image5 },
+    { component: Card, clicked: false, id: uniqid(), num: 6, img: image6 },
+    { component: Card, clicked: false, id: uniqid(), num: 7, img: image7 },
+    { component: Card, clicked: false, id: uniqid(), num: 8, img: image8 },
   ]);
 
   const [scoreBoard, setScoreBoard] = useState(0);

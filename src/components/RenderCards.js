@@ -10,7 +10,7 @@ const RenderCards = (props) => {
             key={i}
             cardClicked={props.cardClicked}
             id={card.id}
-            i={card.num}
+            img={card.img}
           />
         );
       })}

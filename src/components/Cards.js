@@ -1,9 +1,10 @@
 import React from "react";
 
-const Card = ({ cardClicked, id, i }) => {
+const Card = ({ cardClicked, id, img }) => {
+  console.log(img);
   return (
     <div onClick={() => cardClicked(id)} className="card">
-      {i}
+      <img alt="Pokemon" src={img}></img>
     </div>
   );
 };
