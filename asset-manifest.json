@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Memory-Card/static/css/main.f9c69842.css",
+    "main.js": "/Memory-Card/static/js/main.c31c019b.js",
+    "static/media/7-min.png": "/Memory-Card/static/media/7-min.9976206a9ee22316e818.png",
+    "static/media/6-min.png": "/Memory-Card/static/media/6-min.a9edcf7389bf53638d9e.png",
+    "static/media/5-min.png": "/Memory-Card/static/media/5-min.0b30e2e9821f0ddbcf52.png",
+    "static/media/3-min.png": "/Memory-Card/static/media/3-min.1016400135c43df5be90.png",
+    "static/media/4-min.png": "/Memory-Card/static/media/4-min.8e9a60887e4d0634bc6d.png",
+    "static/media/1-min.png": "/Memory-Card/static/media/1-min.e0aee9be04ab69e375af.png",
+    "static/media/2-min.png": "/Memory-Card/static/media/2-min.980e457d159f5c1df705.png",
+    "static/media/8-min.png": "/Memory-Card/static/media/8-min.7b32e332e2d75d6df3a8.png",
+    "index.html": "/Memory-Card/index.html",
+    "main.f9c69842.css.map": "/Memory-Card/static/css/main.f9c69842.css.map",
+    "main.c31c019b.js.map": "/Memory-Card/static/js/main.c31c019b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9c69842.css",
+    "static/js/main.c31c019b.js"
+  ]
+}
